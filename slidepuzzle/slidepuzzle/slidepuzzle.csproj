@@ -57,6 +57,27 @@
     <None Include="GettingStarted.Xamarin" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="snek %281%29.png" />
+    <Content Include="snek %2810%29.png" />
+    <Content Include="snek %2811%29.png" />
+    <Content Include="snek %2812%29.png" />
+    <Content Include="snek %2813%29.png" />
+    <Content Include="snek %2814%29.png" />
+    <Content Include="snek %2815%29.png" />
+    <Content Include="snek %2816%29.png" />
+    <Content Include="snek %282%29.png" />
+    <Content Include="snek %283%29.png" />
+    <Content Include="snek %284%29.png" />
+    <Content Include="snek %285%29.png" />
+    <Content Include="snek %286%29.png" />
+    <Content Include="snek %287%29.png" />
+    <Content Include="snek %288%29.png" />
+    <Content Include="snek %289%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.2.0.45\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.2.0.45\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

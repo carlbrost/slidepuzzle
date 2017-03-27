@@ -135,6 +135,9 @@ namespace slidepuzzle
             _gridItems[item2.Position] = item2;
         }
 
+
+
+
         internal class GridItem : Label
         {
             public GridPosition Position
@@ -142,6 +145,7 @@ namespace slidepuzzle
                 get;
                 set;
             }
+            /* Trying to figure out an image loop*/
 
             public GridItem(GridPosition position, String text)
             {
