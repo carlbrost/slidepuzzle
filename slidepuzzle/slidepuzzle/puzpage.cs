@@ -25,6 +25,7 @@ namespace slidepuzzle
                 HorizontalOptions = LayoutOptions.Center,
                 VerticalOptions = LayoutOptions.Center
             };
+            Shuffle();
 
             var counter = 1;
             for (var row = 0; row < SIZE; row++)
@@ -33,7 +34,15 @@ namespace slidepuzzle
                 {
                     GridItem item = new GridItem(new GridPosition(row, col),
                     counter.ToString());
-
+                    if (counter ==16)
+                    {
+                        item = new GridItem(new GridPosition(row, col), "empty");
+                    
+                            }
+                    else
+                    {
+                        item = new GridItem(new GridPosition(row, col), counter.ToString());
+                    }
                     //Allows for the numbers to be moved.
 
                     var tapRecognizer = new TapGestureRecognizer();
@@ -135,9 +144,34 @@ namespace slidepuzzle
             _gridItems[item2.Position] = item2;
         }
 
+        void Swap(GridItem item1, GridItem item2)
+        {
+
+            GridPosition temp = item1.Position;
+            item1.Position = item2.Position;
+            item2.Position = temp;
+            _gridItems[item1.Position] = item1;
+            _gridItems[item2.Position] = item2;
+        }
+        void Shuffle()
+        {
+            Random rand = new Random();
+            for (var row=0;row<SIZE; row++)
+            {
+              for (var col=0; col<SIZE; col++)
+                {
+                    GridItem item = _gridItems[new GridPosition(row, col)];
+                    int swapRow = rand.Next(0, 4);
+                    int swapCol = rand.Next(0, 4);
+                    GridItem swapItem = _gridItems[new GridPosition(swapRow, swapCol)];
+                    Swap(item, swapItem);
+                }
+            }
+        }
         internal class GridItem : Image
         {
             public GridPosition Position
+
             {
                 get;
                 set;
